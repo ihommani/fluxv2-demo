@@ -7,3 +7,9 @@ metadata:
 spec:
   interval: 1h
   url: https://grafana.github.io/helm-charts
+
+---
+  apiVersion: v1
+  kind: Namespace
+  metadata:
+    name: grafana

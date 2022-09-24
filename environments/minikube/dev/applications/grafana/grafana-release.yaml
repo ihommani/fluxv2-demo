@@ -1,0 +1,17 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: grafana
+  namespace: grafana
+spec:
+  # interval between two charts reconciliations;
+  # if chart.spec.interval is not defined, it's also the interval between two checks of the HelmRepository for updates.
+  interval: 10m
+  chart:
+    spec:
+      chart: grafana # name of the chart to download;
+      version: '6.32.9'
+      sourceRef:
+        kind: HelmRepository
+        name: grafana
+        namespace: default
